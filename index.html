@@ -3,9 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Teste</title>
+    <title>Gerenciador de Tarefas</title>
 </head>
 <body>
-    <h1>Página Teste</h1>
+    <header>
+        <h1>Gerenciador de Tarefas Acadêmicas</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>Busca e Filtros</h2>
+            <form>
+                <label for="buscar_tarefa">Buscar por título da tarefa:</label>
+                <input type="text" id="buscar_tarefa" name="buscar_tarefa" placeholder="Digite o título">
+            
+                <fieldset>
+                    <legend>Filtrar por Status</legend>
+
+                    <input type="radio" id="status_todos" name="status" value="status_todos" checked>
+                    <label for="status_todos">Todos</label>
+
+                    <input type="radio" id="status_fazer" name="status" value="status_fazer">
+                    <label for="status_fazer">A Fazer</label>
+
+                    <input type="radio" id="status_andamento" name="status" value="status_andamento">
+                    <label for="status_andamento">Em Andamento</label>
+
+                    <input type="radio" id="status_revisao" name="status" value="status_revisao">
+                    <label for="status_revisao">Em Revisão</label>
+
+                    <input type="radio" id="status_concluida" name="status" value="status_concluida">
+                    <label for="status_concluida">Concluída</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Filtrar por Prioridade</legend>
+
+                    <input type="radio" id="priori_todos" name="prioridade" value="priori-todos" checked>
+                    <label for="priori_todos">Todos</label>
+
+                    <input type="radio" id="priori_baixa" name="prioridade" value="priori-baixa">
+                    <label for="priori_baixa">Baixa</label>
+
+                    <input type="radio" id="priori_media" name="prioridade" value="priori-media">
+                    <label for="priori_media">Média</label>
+
+                    <input type="radio" id="priori_alta" name="prioridade" value="priori-alta">
+                    <label for="priori_alta">Alta</label>
+                </fieldset>
+
+                <button type="submit">Aplicar</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Quadro de Tarefas</h2>
+            <article>
+                <h3>A Fazer</h3>
+                <ul>
+                    <li>
+                        <h4>Enviar primeira atividade</h4>
+                        <p><strong>Matéria:</strong> Desenvolvimento Front-End</p>
+                        <p><strong>Professor(a):</strong> Marianne Dutra</p>
+                        <p><strong>Prazo:</strong> 12/08/2026</p>
+                        <p><strong>Prioridade:</strong> Alta</p>
+                    </li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>Em Andamento</h3>
+                <ul>
+                    <li>
+                        <h4>Criar Página em HTML</h4>
+                        <p><strong>Matéria:</strong> Desenvolvimento Front-End</p>
+                        <p><strong>Professor(a):</strong> Marianne Dutra</p>
+                        <p><strong>Prazo:</strong> 12/08/2026</p>
+                        <p><strong>Prioridade:</strong> Alta</p>
+                    </li>
+                </ul>
+            </article>
+
+            <article>
+                <h3>Concluída</h3>
+                <ul>
+                    <li>
+                        <h4>Fazer</h4>
+                        <p><strong>Matéria:</strong> Desenvolvimento Front-End</p>
+                        <p><strong>Professor(a):</strong> Marianne Dutra</p>
+                        <p><strong>Prazo:</strong> 12/08/2026</p>
+                        <p><strong>Prioridade:</strong> Alta</p>
+                    </li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>Estudante: </strong>Pedro Henrique Araújo Ferreira</p>
+        <p><strong>Turma: </strong>Terça-Feira | Noturno</p>
+        <p><strong>Disciplina: </strong>Desenvolvimento Front-End</p>
+    </footer>
 </body>
 </html>
