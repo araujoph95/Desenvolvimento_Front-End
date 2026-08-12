@@ -11,8 +11,8 @@
     </header>
 
     <main>
-        <section>
-            <h2>Busca e Filtros</h2>
+        <section aria-labelledby="secao-filtros">
+            <h2 id="secao-filtros">Busca e Filtros</h2>
             <form>
                 <label for="buscar_tarefa">Buscar por título da tarefa:</label>
                 <input type="text" id="buscar_tarefa" name="buscar_tarefa" placeholder="Digite o título">
@@ -20,20 +20,20 @@
                 <fieldset>
                     <legend>Filtrar por Status</legend>
 
-                    <input type="radio" id="status_todos" name="status" value="status_todos" checked>
-                    <label for="status_todos">Todos</label>
+                    <input type="radio" id="filtro_status_todos" name="status" value="filtro_status_todos" checked>
+                    <label for="filtro_status_todos">Todos</label>
 
-                    <input type="radio" id="status_fazer" name="status" value="status_fazer">
-                    <label for="status_fazer">A Fazer</label>
+                    <input type="radio" id="filtro_status_fazer" name="status" value="filtro_status_fazer">
+                    <label for="filtro_status_fazer">A Fazer</label>
 
-                    <input type="radio" id="status_andamento" name="status" value="status_andamento">
-                    <label for="status_andamento">Em Andamento</label>
+                    <input type="radio" id="filtro_status_andamento" name="status" value="filtro_status_andamento">
+                    <label for="filtro_status_andamento">Em Andamento</label>
 
-                    <input type="radio" id="status_revisao" name="status" value="status_revisao">
-                    <label for="status_revisao">Em Revisão</label>
+                    <input type="radio" id="filtro_status_revisao" name="status" value="filtro_status_revisao">
+                    <label for="filtro_status_revisao">Em Revisão</label>
 
-                    <input type="radio" id="status_concluida" name="status" value="status_concluida">
-                    <label for="status_concluida">Concluída</label>
+                    <input type="radio" id="filtro_status_concluida" name="status" value="filtro_status_concluida">
+                    <label for="filtro_status_concluida">Concluída</label>
                 </fieldset>
 
                 <fieldset>
@@ -56,46 +56,103 @@
             </form>
         </section>
 
-        <section>
-            <h2>Quadro de Tarefas</h2>
-            <article>
-                <h3>A Fazer</h3>
+        <section aria-labelledby="secao-quadro-tarefas">
+            <h2 id="secao-quadro-tarefas">Quadro de Tarefas</h2>
+            <section aria-labelledby="status-fazer">
+                <h3 id="status-fazer">A Fazer</h3>
                 <ul>
                     <li>
-                        <h4>Enviar primeira atividade</h4>
-                        <p><strong>Matéria:</strong> Desenvolvimento Front-End</p>
-                        <p><strong>Professor(a):</strong> Marianne Dutra</p>
-                        <p><strong>Prazo:</strong> 12/08/2026</p>
-                        <p><strong>Prioridade:</strong> Alta</p>
+                        <article>
+                            <h4>Enviar primeira atividade</h4>
+                            <p><strong>Projeto:</strong> Desenvolvimento Front-End</p>
+                            <p><strong>Responsável:</strong> Marianne Dutra</p>
+                            <p><strong>Prazo:</strong> <time datetime="2026-08-12">12/08/2026</time></p>
+                            <p><strong>Prioridade:</strong> Alta</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <h4>Definição do Esquema do Banco de Dados</h4>
+                            <p><strong>Projeto:</strong> Banco de Dados Avançado</p>
+                            <p><strong>Responsável:</strong> Fabio</p>
+                            <p><strong>Prazo:</strong> <time datetime="2026-09-16">16/09/2026</time></p>
+                            <p><strong>Prioridade:</strong> Media</p>
+                        </article>
                     </li>
                 </ul>
-            </article>
+            </section>
 
-            <article>
-                <h3>Em Andamento</h3>
+            <section aria-labelledby="status-andamento">
+                <h3 id="status-andamento">Em Andamento</h3>
                 <ul>
                     <li>
-                        <h4>Criar Página em HTML</h4>
-                        <p><strong>Matéria:</strong> Desenvolvimento Front-End</p>
-                        <p><strong>Professor(a):</strong> Marianne Dutra</p>
-                        <p><strong>Prazo:</strong> 12/08/2026</p>
-                        <p><strong>Prioridade:</strong> Alta</p>
+                        <article>
+                            <h4>Criar Página em HTML</h4>
+                            <p><strong>Projeto:</strong> Desenvolvimento Front-End</p>
+                            <p><strong>Responsável:</strong> Marianne Dutra</p>
+                            <p><strong>Prazo:</strong> <time datetime="2026-08-12">12/08/2026</time></p>
+                            <p><strong>Prioridade:</strong> Alta</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <h4>Estruturação HTML das Telas</h4>
+                            <p><strong>Projeto:</strong> TCC - Sistema de Tarefas</p>
+                            <p><strong>Responsável:</strong> Gabriel</p>
+                            <p><strong>Prazo:</strong> <time datetime="2028-05-12">12/05/2028</time></p>
+                            <p><strong>Prioridade:</strong> Baixa</p>
+                        </article>
                     </li>
                 </ul>
-            </article>
+            </section>
 
-            <article>
-                <h3>Concluída</h3>
+            <section aria-labelledby="status-revisao">
+                <h3 id="status-revisao">Em Revisão</h3>
                 <ul>
                     <li>
-                        <h4>Fazer</h4>
-                        <p><strong>Matéria:</strong> Desenvolvimento Front-End</p>
-                        <p><strong>Professor(a):</strong> Marianne Dutra</p>
-                        <p><strong>Prazo:</strong> 12/08/2026</p>
-                        <p><strong>Prioridade:</strong> Alta</p>
+                        <article>
+                            <h4>Analisar página HTML</h4>
+                            <p><strong>Projeto:</strong> Desenvolvimento Front-End</p>
+                            <p><strong>Responsável:</strong> Marianne Dutra</p>
+                            <p><strong>Prazo:</strong> <time datetime="2026-08-12">12/08/2026</time></p>
+                            <p><strong>Prioridade:</strong> Alta</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <h4>Modelagem do Diagrama de Classes</h4>
+                            <p><strong>Projeto:</strong> Engenharia de Software 2</p>
+                            <p><strong>Responsável:</strong> Douglas</p>
+                            <p><strong>Prazo:</strong> <time datetime="2026-08-30">30/08/2026</time></p>
+                            <p><strong>Prioridade:</strong> Média</p>
+                        </article>
                     </li>
                 </ul>
-            </article>
+            </section>
+
+            <section aria-labelledby="status-concluida">
+                <h3 id="status-concluida">Concluída</h3>
+                <ul>
+                    <li>
+                        <article>
+                            <h4>Configuração do Repositório Git</h4>
+                            <p><strong>Projeto:</strong> Desenvolvimento Front-End</p>
+                            <p><strong>Responsável:</strong> Marianne Dutra</p>
+                            <p><strong>Prazo:</strong> <time datetime="2026-08-12">12/08/2026</time></p>
+                            <p><strong>Prioridade:</strong> Média</p>
+                        </article>
+                    </li>
+                    <li>
+                        <article>
+                            <h4>Escolha da Temática do Projeto</h4>
+                            <p><strong>Projeto:</strong> Modelagem de Software</p>
+                            <p><strong>Responsável:</strong> Douglas</p>
+                            <p><strong>Prazo:</strong> <time datetime="2026-08-11">11/08/2026</time></p>
+                            <p><strong>Prioridade:</strong> Alta</p>
+                        </article>
+                    </li>
+                </ul>
+            </section>
         </section>
     </main>
 
