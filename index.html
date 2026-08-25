@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciador de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -11,11 +12,11 @@
     </header>
 
     <main>
-        <section aria-labelledby="secao-filtros">
+        <section class="secao-filtros" aria-labelledby="secao-filtros">
             <h2 id="secao-filtros">Busca e Filtros</h2>
             <form>
                 <label for="buscar_tarefa">Buscar por título da tarefa:</label>
-                <input type="text" id="buscar_tarefa" name="buscar_tarefa" placeholder="Digite o título">
+                <input class="text" type="text" id="buscar_tarefa" name="buscar_tarefa" placeholder="Digite o título">
             
                 <fieldset>
                     <legend>Filtrar por Status</legend>
@@ -56,9 +57,9 @@
             </form>
         </section>
 
-        <section aria-labelledby="secao-quadro-tarefas">
+        <section class="secao-quadro-tarefas" aria-labelledby="secao-quadro-tarefas">
             <h2 id="secao-quadro-tarefas">Quadro de Tarefas</h2>
-            <section aria-labelledby="status-fazer">
+            <section class="a-fazer" aria-labelledby="status-fazer">
                 <h3 id="status-fazer">A Fazer</h3>
                 <ul>
                     <li>
@@ -82,7 +83,7 @@
                 </ul>
             </section>
 
-            <section aria-labelledby="status-andamento">
+            <section class="em-andamento" aria-labelledby="status-andamento">
                 <h3 id="status-andamento">Em Andamento</h3>
                 <ul>
                     <li>
@@ -106,7 +107,7 @@
                 </ul>
             </section>
 
-            <section aria-labelledby="status-revisao">
+            <section class="em-revisao" aria-labelledby="status-revisao">
                 <h3 id="status-revisao">Em Revisão</h3>
                 <ul>
                     <li>
@@ -130,7 +131,7 @@
                 </ul>
             </section>
 
-            <section aria-labelledby="status-concluida">
+            <section class="concluido" aria-labelledby="status-concluida">
                 <h3 id="status-concluida">Concluída</h3>
                 <ul>
                     <li>
