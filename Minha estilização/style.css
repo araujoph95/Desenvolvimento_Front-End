@@ -47,6 +47,13 @@ article{
 
 li{
     list-style: none;
+    padding: 4px;
+    margin: 8px 2px;
+}
+
+
+.secao-filtros, .secao-quadro-tarefas{
+    border: 4px solid rgba(168, 168, 168, 0.301);
 }
 
 .a-fazer h3{
@@ -83,11 +90,6 @@ li{
 .concluido article{
     border-color: rgba(142, 219, 25, 0.788);
     border-left: rgba(142, 219, 25, 0.788) solid 6px;
-}
-
-.secao-filtros, .secao-quadro-tarefas{
-    border: 4px solid rgba(168, 168, 168, 0.301);
-    
 }
 
 fieldset{
