@@ -1,0 +1,76 @@
+{
+  "tarefas": [
+    {
+      "id": 1,
+      "titulo": "Enviar primeira atividade",
+      "projeto": "Desenvolvimento Front-End",
+      "responsavel": "Pedro Ferreira",
+      "prazo": "2026-08-12",
+      "prioridade": "Alta",
+      "status": "a-fazer"
+    },
+    {
+      "id": 2,
+      "titulo": "Definição do Esquema do Banco de Dados",
+      "projeto": "Banco de Dados Avançado",
+      "responsavel": "Fabio",
+      "prazo": "2026-09-16",
+      "prioridade": "Média",
+      "status": "a-fazer"
+    },
+    {
+      "id": 3,
+      "titulo": "Criar Página em HTML",
+      "projeto": "Desenvolvimento Front-End",
+      "responsavel": "Pedro Ferreira",
+      "prazo": "2026-08-12",
+      "prioridade": "Alta",
+      "status": "em-andamento"
+    },
+    {
+      "id": 4,
+      "titulo": "Estruturação HTML das Telas",
+      "projeto": "TCC - Sistema de Tarefas",
+      "responsavel": "Gabriel",
+      "prazo": "2028-05-12",
+      "prioridade": "Baixa",
+      "status": "em-andamento"
+    },
+    {
+      "id": 5,
+      "titulo": "Analisar página HTML",
+      "projeto": "Desenvolvimento Front-End",
+      "responsavel": "Pedro Ferreira",
+      "prazo": "2026-08-12",
+      "prioridade": "Alta",
+      "status": "em-revisao"
+    },
+    {
+      "id": 6,
+      "titulo": "Modelagem do Diagrama de Classes",
+      "projeto": "Engenharia de Software 2",
+      "responsavel": "Douglas",
+      "prazo": "2026-08-30",
+      "prioridade": "Média",
+      "status": "em-revisao"
+    },
+    {
+      "id": 7,
+      "titulo": "Configuração do Repositório Git",
+      "projeto": "Desenvolvimento Front-End",
+      "responsavel": "Pedro Ferreira",
+      "prazo": "2026-08-12",
+      "prioridade": "Média",
+      "status": "concluido"
+    },
+    {
+      "id": 8,
+      "titulo": "Escolha da Temática do Projeto",
+      "projeto": "Modelagem de Software",
+      "responsavel": "Douglas",
+      "prazo": "2026-08-11",
+      "prioridade": "Alta",
+      "status": "concluido"
+    }
+  ]
+}

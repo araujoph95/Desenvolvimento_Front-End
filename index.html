@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciador de Tarefas</title>
     <link rel="stylesheet" href="styles.css">
+    <script type="module" src="js/main.js" defer></script>
 </head>
 <body>
     <header>
         <h1>Gerenciador de Tarefas Acadêmicas</h1>
     </header>
+
+    <!-- Região viva para leitores de tela: vazia no início -->
+    <div id="status-regiao" role="status" aria-live="polite"></div>
 
     <main>
         <section class="secao-filtros" aria-labelledby="secao-filtros">
@@ -59,98 +63,26 @@
 
         <section class="secao-quadro-tarefas" aria-labelledby="secao-quadro-tarefas">
             <h2 id="secao-quadro-tarefas">Quadro de Tarefas</h2>
-            <div class="container-tarefas">
+            
+            <!-- Contêiner dinâmico para os 4 estados -->
+            <div id="mensagem-estado"></div>
+
+            <div class="container-tarefas" id="container-tarefas">
                 <section class="a-fazer" aria-labelledby="status-fazer">
                     <h3 id="status-fazer">A Fazer</h3>
-                    <ul>
-                        <li>
-                            <article>
-                                <h4>Enviar primeira atividade</h4>
-                                <p><strong>Projeto:</strong> Desenvolvimento Front-End</p>
-                                <p><strong>Responsável:</strong> Marianne Dutra</p>
-                                <p><strong>Prazo:</strong> <time datetime="2026-08-12">12/08/2026</time></p>
-                                <p><strong>Prioridade:</strong> Alta</p>
-                            </article>
-                        </li>
-                        <li>
-                            <article>
-                                <h4>Definição do Esquema do Banco de Dados</h4>
-                                <p><strong>Projeto:</strong> Banco de Dados Avançado</p>
-                                <p><strong>Responsável:</strong> Fabio</p>
-                                <p><strong>Prazo:</strong> <time datetime="2026-09-16">16/09/2026</time></p>
-                                <p><strong>Prioridade:</strong> Media</p>
-                            </article>
-                        </li>
-                    </ul>
+                    <ul id="lista-fazer"></ul>
                 </section>
                 <section class="em-andamento" aria-labelledby="status-andamento">
                     <h3 id="status-andamento">Em Andamento</h3>
-                    <ul>
-                        <li>
-                            <article>
-                                <h4>Criar Página em HTML</h4>
-                                <p><strong>Projeto:</strong> Desenvolvimento Front-End</p>
-                                <p><strong>Responsável:</strong> Marianne Dutra</p>
-                                <p><strong>Prazo:</strong> <time datetime="2026-08-12">12/08/2026</time></p>
-                                <p><strong>Prioridade:</strong> Alta</p>
-                            </article>
-                        </li>
-                        <li>
-                            <article>
-                                <h4>Estruturação HTML das Telas</h4>
-                                <p><strong>Projeto:</strong> TCC - Sistema de Tarefas</p>
-                                <p><strong>Responsável:</strong> Gabriel</p>
-                                <p><strong>Prazo:</strong> <time datetime="2028-05-12">12/05/2028</time></p>
-                                <p><strong>Prioridade:</strong> Baixa</p>
-                            </article>
-                        </li>
-                    </ul>
+                    <ul id="lista-andamento"></ul>
                 </section>
                 <section class="em-revisao" aria-labelledby="status-revisao">
                     <h3 id="status-revisao">Em Revisão</h3>
-                    <ul>
-                        <li>
-                            <article>
-                                <h4>Analisar página HTML</h4>
-                                <p><strong>Projeto:</strong> Desenvolvimento Front-End</p>
-                                <p><strong>Responsável:</strong> Marianne Dutra</p>
-                                <p><strong>Prazo:</strong> <time datetime="2026-08-12">12/08/2026</time></p>
-                                <p><strong>Prioridade:</strong> Alta</p>
-                            </article>
-                        </li>
-                        <li>
-                            <article>
-                                <h4>Modelagem do Diagrama de Classes</h4>
-                                <p><strong>Projeto:</strong> Engenharia de Software 2</p>
-                                <p><strong>Responsável:</strong> Douglas</p>
-                                <p><strong>Prazo:</strong> <time datetime="2026-08-30">30/08/2026</time></p>
-                                <p><strong>Prioridade:</strong> Média</p>
-                            </article>
-                        </li>
-                    </ul>
+                    <ul id="lista-revisao"></ul>
                 </section>
                 <section class="concluido" aria-labelledby="status-concluida">
                     <h3 id="status-concluida">Concluída</h3>
-                    <ul>
-                        <li>
-                            <article>
-                                <h4>Configuração do Repositório Git</h4>
-                                <p><strong>Projeto:</strong> Desenvolvimento Front-End</p>
-                                <p><strong>Responsável:</strong> Marianne Dutra</p>
-                                <p><strong>Prazo:</strong> <time datetime="2026-08-12">12/08/2026</time></p>
-                                <p><strong>Prioridade:</strong> Média</p>
-                            </article>
-                        </li>
-                        <li>
-                            <article>
-                                <h4>Escolha da Temática do Projeto</h4>
-                                <p><strong>Projeto:</strong> Modelagem de Software</p>
-                                <p><strong>Responsável:</strong> Douglas</p>
-                                <p><strong>Prazo:</strong> <time datetime="2026-08-11">11/08/2026</time></p>
-                                <p><strong>Prioridade:</strong> Alta</p>
-                            </article>
-                        </li>
-                    </ul>
+                    <ul id="lista-concluido"></ul>
                 </section>
             </div>
         </section>
