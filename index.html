@@ -3,85 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciador de Tarefas</title>
+    <meta name="description" content="Quadro de tarefas acadêmicas com busca e filtros por status e prioridade.">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#070c1b">
+    <title>Gerenciador de Tarefas Acadêmicas</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="js/main.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Gerenciador de Tarefas Acadêmicas</h1>
+    <header class="cabecalho">
+        <div>
+            <h1>Gerenciador de Tarefas Acadêmicas</h1>
+            <p>Acompanhe o andamento das entregas do semestre.</p>
+        </div>
+        <p class="resumo-quadro">
+            <strong id="total-visivel">0</strong>
+            <span id="rotulo-total">tarefas no quadro</span>
+        </p>
     </header>
 
     <!-- Região viva para leitores de tela: vazia no início -->
-    <div id="status-regiao" role="status" aria-live="polite"></div>
+    <div id="status-regiao" class="apenas-leitor" role="status" aria-live="polite"></div>
 
     <main>
-        <section class="secao-filtros" aria-labelledby="secao-filtros">
-            <h2 id="secao-filtros">Busca e Filtros</h2>
-            <form>
-                <label for="buscar_tarefa">Buscar por título da tarefa:</label>
-                <input class="text" type="text" id="buscar_tarefa" name="buscar_tarefa" placeholder="Digite o título">
-            
+        <section class="painel secao-filtros" aria-labelledby="titulo-filtros">
+            <h2 id="titulo-filtros">Busca e filtros</h2>
+
+            <form id="form-filtros">
+                <div class="campo-busca">
+                    <label for="buscar_tarefa">Buscar por título</label>
+                    <input type="search" id="buscar_tarefa" name="buscar_tarefa"
+                           placeholder="Ex.: diagrama de classes" autocomplete="off">
+                </div>
+
                 <fieldset>
-                    <legend>Filtrar por Status</legend>
-
-                    <input type="radio" id="filtro_status_todos" name="status" value="filtro_status_todos" checked>
-                    <label for="filtro_status_todos">Todos</label>
-
-                    <input type="radio" id="filtro_status_fazer" name="status" value="filtro_status_fazer">
-                    <label for="filtro_status_fazer">A Fazer</label>
-
-                    <input type="radio" id="filtro_status_andamento" name="status" value="filtro_status_andamento">
-                    <label for="filtro_status_andamento">Em Andamento</label>
-
-                    <input type="radio" id="filtro_status_revisao" name="status" value="filtro_status_revisao">
-                    <label for="filtro_status_revisao">Em Revisão</label>
-
-                    <input type="radio" id="filtro_status_concluida" name="status" value="filtro_status_concluida">
-                    <label for="filtro_status_concluida">Concluída</label>
+                    <legend>Status</legend>
+                    <div class="grupo-opcoes">
+                        <label class="opcao">
+                            <input type="radio" name="status" value="todos" checked>
+                            Todos
+                        </label>
+                        <label class="opcao" data-cor="a-fazer">
+                            <input type="radio" name="status" value="a-fazer">
+                            A fazer
+                        </label>
+                        <label class="opcao" data-cor="em-andamento">
+                            <input type="radio" name="status" value="em-andamento">
+                            Em andamento
+                        </label>
+                        <label class="opcao" data-cor="em-revisao">
+                            <input type="radio" name="status" value="em-revisao">
+                            Em revisão
+                        </label>
+                        <label class="opcao" data-cor="concluido">
+                            <input type="radio" name="status" value="concluido">
+                            Concluída
+                        </label>
+                    </div>
                 </fieldset>
 
                 <fieldset>
-                    <legend>Filtrar por Prioridade</legend>
-
-                    <input type="radio" id="priori_todos" name="prioridade" value="priori-todos" checked>
-                    <label for="priori_todos">Todos</label>
-
-                    <input type="radio" id="priori_baixa" name="prioridade" value="priori-baixa">
-                    <label for="priori_baixa">Baixa</label>
-
-                    <input type="radio" id="priori_media" name="prioridade" value="priori-media">
-                    <label for="priori_media">Média</label>
-
-                    <input type="radio" id="priori_alta" name="prioridade" value="priori-alta">
-                    <label for="priori_alta">Alta</label>
+                    <legend>Prioridade</legend>
+                    <div class="grupo-opcoes">
+                        <label class="opcao">
+                            <input type="radio" name="prioridade" value="todos" checked>
+                            Todas
+                        </label>
+                        <label class="opcao" data-cor="Baixa">
+                            <input type="radio" name="prioridade" value="Baixa">
+                            Baixa
+                        </label>
+                        <label class="opcao" data-cor="Média">
+                            <input type="radio" name="prioridade" value="Média">
+                            Média
+                        </label>
+                        <label class="opcao" data-cor="Alta">
+                            <input type="radio" name="prioridade" value="Alta">
+                            Alta
+                        </label>
+                    </div>
                 </fieldset>
 
-                <button type="submit">Aplicar</button>
+                <div class="acoes-filtro">
+                    <button class="botao" type="submit">Aplicar filtros</button>
+                    <button class="botao botao-secundario" type="button" id="limpar-filtros">Limpar</button>
+                </div>
             </form>
         </section>
 
-        <section class="secao-quadro-tarefas" aria-labelledby="secao-quadro-tarefas">
-            <h2 id="secao-quadro-tarefas">Quadro de Tarefas</h2>
-            
-            <!-- Contêiner dinâmico para os 4 estados -->
-            <div id="mensagem-estado"></div>
+        <section class="painel secao-quadro-tarefas" aria-labelledby="titulo-quadro">
+            <h2 id="titulo-quadro">Quadro de tarefas</h2>
+
+            <!-- Contêiner dinâmico: carregando, vazio, erro -->
+            <div id="mensagem-estado" class="mensagem-estado" hidden></div>
 
             <div class="container-tarefas" id="container-tarefas">
-                <section class="a-fazer" aria-labelledby="status-fazer">
-                    <h3 id="status-fazer">A Fazer</h3>
+                <section class="coluna" data-status="a-fazer" aria-labelledby="status-fazer">
+                    <div class="coluna-topo">
+                        <h3 id="status-fazer">A fazer</h3>
+                        <span class="contador" id="contador-fazer" aria-hidden="true">0</span>
+                    </div>
                     <ul id="lista-fazer"></ul>
                 </section>
-                <section class="em-andamento" aria-labelledby="status-andamento">
-                    <h3 id="status-andamento">Em Andamento</h3>
+
+                <section class="coluna" data-status="em-andamento" aria-labelledby="status-andamento">
+                    <div class="coluna-topo">
+                        <h3 id="status-andamento">Em andamento</h3>
+                        <span class="contador" id="contador-andamento" aria-hidden="true">0</span>
+                    </div>
                     <ul id="lista-andamento"></ul>
                 </section>
-                <section class="em-revisao" aria-labelledby="status-revisao">
-                    <h3 id="status-revisao">Em Revisão</h3>
+
+                <section class="coluna" data-status="em-revisao" aria-labelledby="status-revisao">
+                    <div class="coluna-topo">
+                        <h3 id="status-revisao">Em revisão</h3>
+                        <span class="contador" id="contador-revisao" aria-hidden="true">0</span>
+                    </div>
                     <ul id="lista-revisao"></ul>
                 </section>
-                <section class="concluido" aria-labelledby="status-concluida">
-                    <h3 id="status-concluida">Concluída</h3>
+
+                <section class="coluna" data-status="concluido" aria-labelledby="status-concluida">
+                    <div class="coluna-topo">
+                        <h3 id="status-concluida">Concluída</h3>
+                        <span class="contador" id="contador-concluido" aria-hidden="true">0</span>
+                    </div>
                     <ul id="lista-concluido"></ul>
                 </section>
             </div>
@@ -89,9 +139,9 @@
     </main>
 
     <footer>
-        <p><strong>Estudante: </strong>Pedro Henrique Araújo Ferreira</p>
-        <p><strong>Turma: </strong>Terça-Feira | Noturno</p>
-        <p><strong>Disciplina: </strong>Desenvolvimento Front-End</p>
+        <p><strong>Estudante:</strong> Pedro Henrique Araújo Ferreira</p>
+        <p><strong>Turma:</strong> Terça-feira | Noturno</p>
+        <p><strong>Disciplina:</strong> Desenvolvimento Front-End</p>
     </footer>
 </body>
 </html>
